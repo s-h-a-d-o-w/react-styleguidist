@@ -1,0 +1,14 @@
+{
+  "presets": [
+    "@babel/react"
+  ],
+  "plugins": ["@babel/plugin-proposal-class-properties"],
+  "overrides": [
+    {
+      "test": ["./src/**/*.tsx"],
+      "presets": [
+        "@babel/preset-typescript"
+      ]
+    }
+  ]
+}

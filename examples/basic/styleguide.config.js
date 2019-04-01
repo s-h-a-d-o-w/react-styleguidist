@@ -2,7 +2,7 @@ const path = require('path');
 const { version } = require('./package');
 
 module.exports = {
-	components: 'src/components/**/[A-Z]*.js',
+	components: 'src/components/**/[A-Z]*.{js,tsx}',
 	defaultExample: true,
 	moduleAliases: {
 		'rsg-example': path.resolve(__dirname, 'src'),
@@ -15,7 +15,7 @@ module.exports = {
 		module: {
 			rules: [
 				{
-					test: /\.jsx?$/,
+					test: /\.(t|j)sx?$/,
 					exclude: /node_modules/,
 					loader: 'babel-loader',
 				},
@@ -24,6 +24,10 @@ module.exports = {
 					loader: 'style-loader!css-loader',
 				},
 			],
+		},
+		resolve: {
+			extensions: ['.js', '.jsx', '.json', '.tsx'],
+			alias: {},
 		},
 	},
 };
